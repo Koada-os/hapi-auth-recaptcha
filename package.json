@@ -1,7 +1,7 @@
 {
   "name": "hapi-auth-recaptcha",
   "description": "Hapi recaptcha auth plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git://github.com/Koada-os/hapi-auth-recaptcha",
   "main": "lib/index.js",
   "keywords": [
@@ -22,8 +22,6 @@
   },
   "devDependencies": {
     "hapi": "13.x.x"
-  },
-  "scripts": {
   },
   "license": "Apache-2.0"
 }
