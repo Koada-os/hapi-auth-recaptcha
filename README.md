@@ -1,6 +1,6 @@
 ### hapi-auth-recaptcha
 
-Recaptcha authentication requires validating a Recaptcha token generated and sent by the browser via the get parameters or the payload. The `'recaptcha'` scheme takes the following options:
+Recaptcha authentication requires the validation of a Recaptcha token generated and sent by the browser via the `recaptcha-token` header. The `'recaptcha'` scheme takes the following options:
 
 - `validateFunc` - (required) the function which is run once the Recaptcha has been verified `function(request, callback)` where:
     - `request` - is the hapi request object of the request which is being authenticated.
@@ -8,7 +8,7 @@ Recaptcha authentication requires validating a Recaptcha token generated and sen
         - `err` - an internal error. If defined will replace default `Boom.unauthorized` error
         - `isValid` - `true` if both the username was found and the password matched, otherwise `false`.
 - `recaptchaSecret` - (required) The secret key used to verify the Recaptcha token. You can get one [here](https://www.google.com/recaptcha/admin)
-- `tokenName` - (optional) A custom name for the Recaptcha token payload / parameters. Default: `recaptchaToken`
+- `headerName` - (optional) A custom header name for the recaptcha token token. Default: `recaptcha-token`
 
 ### Usage
 
