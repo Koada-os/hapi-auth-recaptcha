@@ -25,7 +25,7 @@ const validate = function (request, callback) {
 
 server.register(require('hapi-auth-recaptcha'), (err) => {
 
-    server.auth.strategy('recaptcha', 'recaptcha', { validateFunc: validate });
-    server.route({ method: 'GET', path: '/', config: { auth: 'recaptcha' } });
+    server.auth.strategy('recaptcha', 'recaptcha', { validateFunc: validate,  recaptchaSecret: 'TheSecret'}, tokenName: 'reToken');
+    server.route({ method: 'GET', path: '/{reToken}', config: { auth: 'recaptcha' } });
 });
 ```
